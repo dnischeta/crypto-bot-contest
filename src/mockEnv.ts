@@ -1,12 +1,12 @@
-import { mockTelegramEnv, isTMA, parseInitData } from '@telegram-apps/sdk-vue';
+import { mockTelegramEnv, isTMA, parseInitData } from '@telegram-apps/sdk-vue'
 
 // It is important, to mock the environment only for development purposes. When building the
 // application, import.meta.env.DEV will become false, and the code inside will be tree-shaken,
 // so you will not see it in your final bundle.
 if (import.meta.env.DEV) {
-  (() => {
-    let shouldMock;
-    const MOCK_KEY = '____mocked';
+  ;(() => {
+    let shouldMock
+    const MOCK_KEY = '____mocked'
 
     // We don't mock if we are already in a mini app.
     if (isTMA('simple')) {
@@ -14,31 +14,37 @@ if (import.meta.env.DEV) {
       // In case we did, we should do it again.
       // The reason is the page could be reloaded, and we should apply mock again, because
       // mocking also enables modifying the window object.
-      shouldMock = !!sessionStorage.getItem(MOCK_KEY);
+      shouldMock = !!sessionStorage.getItem(MOCK_KEY)
     } else {
-      shouldMock = true;
+      shouldMock = true
     }
 
     if (!shouldMock) {
-      return;
+      return
     }
 
     const initDataRaw = new URLSearchParams([
-      ['user', JSON.stringify({
-        id: 99281932,
-        first_name: 'Andrew',
-        last_name: 'Rogue',
-        username: 'rogue',
-        language_code: 'en',
-        is_premium: true,
-        allows_write_to_pm: true,
-      })],
-      ['hash', '89d6079ad6762351f38c6dbbc41bb53048019256a9443988af7a48bcad16ba31'],
+      [
+        'user',
+        JSON.stringify({
+          id: 99281932,
+          first_name: 'Andrew',
+          last_name: 'Rogue',
+          username: 'rogue',
+          language_code: 'en',
+          is_premium: true,
+          allows_write_to_pm: true,
+        }),
+      ],
+      [
+        'hash',
+        '89d6079ad6762351f38c6dbbc41bb53048019256a9443988af7a48bcad16ba31',
+      ],
       ['auth_date', '1716922846'],
       ['start_param', 'debug'],
       ['chat_type', 'sender'],
       ['chat_instance', '8428209589180549439'],
-    ]).toString();
+    ]).toString()
 
     mockTelegramEnv({
       themeParams: {
@@ -60,11 +66,11 @@ if (import.meta.env.DEV) {
       initDataRaw,
       version: '8',
       platform: 'tdesktop',
-    });
-    sessionStorage.setItem(MOCK_KEY, '1');
+    })
+    sessionStorage.setItem(MOCK_KEY, '1')
 
     console.info(
       '⚠️ As long as the current environment was not considered as the Telegram-based one, it was mocked. Take a note, that you should not do it in production and current behavior is only specific to the development process. Environment mocking is also applied only in development mode. So, after building the application, you will not see this behavior and related warning, leading to crashing the application outside Telegram.',
-    );
-  })();
+    )
+  })()
 }

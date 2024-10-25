@@ -1,32 +1,35 @@
 <script setup lang="ts">
-import { onMounted, onBeforeUnmount } from 'vue';
-import { useRouter } from 'vue-router';
-import { backButton } from '@telegram-apps/sdk-vue';
+import { onMounted, onBeforeUnmount } from 'vue'
+import { useRouter } from 'vue-router'
+import { backButton } from '@telegram-apps/sdk-vue'
 
-const props = withDefaults(defineProps<{
-  /**
-   * True if it is allowed to go back from this page.
-   * @default true
-   */
-  back?: boolean;
-  title: string;
-}>(), {
-  back: true,
-});
+const props = withDefaults(
+  defineProps<{
+    /**
+     * True if it is allowed to go back from this page.
+     * @default true
+     */
+    back?: boolean
+    title: string
+  }>(),
+  {
+    back: true,
+  },
+)
 
-const router = useRouter();
+const router = useRouter()
 
 onMounted(() => {
   if (props.back) {
-    backButton.show();
+    backButton.show()
     const unsub = backButton.onClick(() => {
-      router.go(-1);
-    });
-    onBeforeUnmount(unsub);
+      router.go(-1)
+    })
+    onBeforeUnmount(unsub)
   } else {
-    backButton.hide();
+    backButton.hide()
   }
-});
+})
 </script>
 
 <template>

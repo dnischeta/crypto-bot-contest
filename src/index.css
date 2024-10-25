@@ -1,13 +1,57 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
+  font-family:
+    'SF Pro',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
-
+  letter-spacing: -0.43px;
   background: var(--tg-theme-secondary-bg-color, white);
-  color: var(--tg-theme-text-color, black);
+  color: var(--color-black, black);
+}
+
+h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 16px; /* 17px in figma */
+  line-height: 22px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 16px; /* 17px in figma */
+  line-height: 22px;
+}
+
+.text--bold {
+  font-weight: 510;
+}
+
+.caption {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0;
 }
 
 blockquote {

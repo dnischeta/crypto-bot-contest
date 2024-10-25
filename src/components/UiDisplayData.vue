@@ -1,33 +1,33 @@
 <script lang="ts">
-import { type RGB } from '@telegram-apps/sdk-vue';
-import { type Component } from 'vue';
+import { type RGB } from '@telegram-apps/sdk-vue'
+import { type Component } from 'vue'
 
 export interface DisplayDataRow {
-  title: string;
-  value?: RGB | string | number | boolean | Component;
-};
+  title: string
+  value?: RGB | string | number | boolean | Component
+}
 
 export interface DisplayDataProps {
-  rows: DisplayDataRow[];
-};
+  rows: DisplayDataRow[]
+}
 </script>
 
 <script setup lang="ts">
-import { isRGB } from '@telegram-apps/sdk-vue';
-import UiRGB from './UiRGB.vue';
+import { isRGB } from '@telegram-apps/sdk-vue'
+import UiRGB from './UiRGB.vue'
 
-defineProps<DisplayDataProps>();
+defineProps<DisplayDataProps>()
 
 function mapValueToString(value?: boolean | string) {
   switch (value) {
     case true:
-      return '✔️';
+      return '✔️'
     case false:
-      return '❌';
+      return '❌'
     case undefined:
-      return 'empty';
+      return 'empty'
     default:
-      return value;
+      return value
   }
 }
 </script>
@@ -38,8 +38,13 @@ function mapValueToString(value?: boolean | string) {
       <span class="display-data__line-title">{{ row.title }}</span>
       <span class="display-data__line-value">
         <component v-if="typeof row.value === 'object'" :is="row.value" />
-        <UiRGB v-else-if="typeof row.value === 'string' && isRGB(row.value)" :color="row.value" />
-        <span v-else>{{ mapValueToString(row.value as boolean | string | undefined) }}</span>
+        <UiRGB
+          v-else-if="typeof row.value === 'string' && isRGB(row.value)"
+          :color="row.value"
+        />
+        <span v-else>{{
+          mapValueToString(row.value as boolean | string | undefined)
+        }}</span>
       </span>
     </div>
   </div>

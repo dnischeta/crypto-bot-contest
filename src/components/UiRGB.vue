@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { type RGB } from '@telegram-apps/sdk-vue';
+import { type RGB } from '@telegram-apps/sdk-vue'
 
 defineProps<{
   color: RGB
-}>();
+}>()
 </script>
 
 <template>
   <span class="rgb">
     <i class="rgb__icon" :style="{ 'background-color': color }" />
-    {{color}}
+    {{ color }}
   </span>
 </template>
 

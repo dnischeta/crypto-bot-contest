@@ -1,31 +1,47 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import { routes } from '@/router';
-import UiPage from '@/components/UiPage.vue';
-import UiLink from '@/components/UiLink.vue';
-
-const nonIndexRoutes = computed(() => routes.filter((r) => !!r.meta?.title));
+import UiButton from '@/components/ui/ui-button.vue'
+import UiCard from '@/components/ui/ui-card.vue'
 </script>
 
 <template>
-  <UiPage title="Home Page" :back="false">
-    <p>
-      This page is a home page in this boilerplate. You can use the links below to visit other
-      pages with their own functionality.
-    </p>
-    <ul class="index-page__links">
-      <li v-for="route in nonIndexRoutes" :key="route.name" class="index-page__link-item">
-        <UiLink class="index-page__link" :to="{ name: route.name }">
-          <!-- @vue-expect-error -->
-          <i v-if="route.meta?.icon" class="index-page__link-icon">
-            <!-- @vue-expect-error -->
-            <component :is="route.meta.icon" />
-          </i>
-          {{ route.meta!.title }}
-        </UiLink>
-      </li>
-    </ul>
-  </UiPage>
+  <div
+    style="
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    "
+  >
+    <h1>Title 1</h1>
+    <h2>Title 2</h2>
+    <span class="text">Text</span>
+    <span class="text text--bold">Text Bold</span>
+    <span class="caption">Caption</span>
+    <UiButton icon="usdt">1000 USDT</UiButton>
+    <UiButton icon="eth">1000 ETH</UiButton>
+    <UiButton icon="ton">1000 TON</UiButton>
+    <UiButton>Send</UiButton>
+
+    <UiCard size="sm">
+      <template #head>
+        <span class="caption">Delicious Cake</span>
+      </template>
+      <div style="height: 73px; width: 73px; background-color: red"></div>
+      <template #footer>
+        <UiButton>Send</UiButton>
+      </template>
+    </UiCard>
+    <UiCard size="lg">
+      <template #head>
+        <span class="caption" style="margin-left: auto">1 of 10K</span>
+      </template>
+      <img src="/img/gift-mock.png" style="margin-bottom: 4px" />
+      <h2>Delicious Cake</h2>
+      <template #footer>
+        <UiButton icon="ton">1000 TON</UiButton>
+      </template>
+    </UiCard>
+  </div>
 </template>
 
 <style scoped>
@@ -40,7 +56,7 @@ const nonIndexRoutes = computed(() => routes.filter((r) => !!r.meta?.title));
   gap: 5px;
 }
 
-.index-page__link-item+.index-page__link-item {
+.index-page__link-item + .index-page__link-item {
   margin-top: 10px;
 }
 

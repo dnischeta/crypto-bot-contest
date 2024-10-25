@@ -1,8 +1,8 @@
-import { createRouter, createMemoryHistory } from 'vue-router';
-import IndexPage from '../pages/IndexPage.vue';
-import InitDataPage from '../pages/InitDataPage.vue';
-import ThemeParamsPage from '../pages/ThemeParamsPage.vue';
-import LaunchParamsPage from '../pages/LaunchParamsPage.vue';
+import { createRouter, createMemoryHistory } from 'vue-router'
+import IndexPage from '../pages/IndexPage.vue'
+import InitDataPage from '../pages/InitDataPage.vue'
+import ThemeParamsPage from '../pages/ThemeParamsPage.vue'
+import LaunchParamsPage from '../pages/LaunchParamsPage.vue'
 
 export const routes = [
   {
@@ -34,11 +34,11 @@ export const routes = [
       title: 'Launch Params',
     },
   },
-];
+]
 
 const router = createRouter({
   history: createMemoryHistory(import.meta.env.BASE_URL),
   routes,
-});
+})
 
-export default router;
+export default router

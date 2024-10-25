@@ -1,57 +1,66 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import { initData as $initData, useSignal, type User } from '@telegram-apps/sdk-vue';
-import UiLink from '@/components/UiLink.vue';
-import UiPage from '@/components/UiPage.vue';
-import UiDisplayData, { type DisplayDataRow } from '@/components/UiDisplayData.vue';
+import { computed } from 'vue'
+import {
+  initData as $initData,
+  useSignal,
+  type User,
+} from '@telegram-apps/sdk-vue'
+import UiLink from '@/components/UiLink.vue'
+import UiPage from '@/components/UiPage.vue'
+import UiDisplayData, {
+  type DisplayDataRow,
+} from '@/components/UiDisplayData.vue'
 
-const initData = useSignal($initData.state);
-const initDataRaw = useSignal($initData.raw);
-const canSendAfterDate = useSignal($initData.canSendAfterDate);
+const initData = useSignal($initData.state)
+const initDataRaw = useSignal($initData.raw)
+const canSendAfterDate = useSignal($initData.canSendAfterDate)
 
 const initDataRows = computed<DisplayDataRow[] | undefined>(() => {
-  const complete = initData.value;
+  const complete = initData.value
 
   return complete && initDataRaw.value
     ? [
-      { title: 'raw', value: initDataRaw.value },
-      { title: 'auth_date', value: complete.authDate.toLocaleString() },
-      { title: 'auth_date (raw)', value: complete.authDate.getTime() / 1000 },
-      { title: 'hash', value: complete.hash },
-      { title: 'can_send_after', value: canSendAfterDate.value?.toISOString() },
-      { title: 'can_send_after (raw)', value: complete.canSendAfter },
-      { title: 'query_id', value: complete.queryId },
-      { title: 'start_param', value: complete.startParam },
-      { title: 'chat_type', value: complete.chatType },
-      { title: 'chat_instance', value: complete.chatInstance },
-    ]
-    : undefined;
-});
+        { title: 'raw', value: initDataRaw.value },
+        { title: 'auth_date', value: complete.authDate.toLocaleString() },
+        { title: 'auth_date (raw)', value: complete.authDate.getTime() / 1000 },
+        { title: 'hash', value: complete.hash },
+        {
+          title: 'can_send_after',
+          value: canSendAfterDate.value?.toISOString(),
+        },
+        { title: 'can_send_after (raw)', value: complete.canSendAfter },
+        { title: 'query_id', value: complete.queryId },
+        { title: 'start_param', value: complete.startParam },
+        { title: 'chat_type', value: complete.chatType },
+        { title: 'chat_instance', value: complete.chatInstance },
+      ]
+    : undefined
+})
 
 const userRows = computed<DisplayDataRow[] | undefined>(() => {
-  const user = initData.value?.user;
+  const user = initData.value?.user
 
-  return user ? getUserRows(user) : undefined;
+  return user ? getUserRows(user) : undefined
 })
 
 const receiverRows = computed<DisplayDataRow[] | undefined>(() => {
-  const receiver = initData.value?.receiver;
+  const receiver = initData.value?.receiver
 
-  return receiver ? getUserRows(receiver) : undefined;
+  return receiver ? getUserRows(receiver) : undefined
 })
 
 const chatRows = computed<DisplayDataRow[] | undefined>(() => {
-  const chat = initData.value?.chat;
+  const chat = initData.value?.chat
 
   return chat
     ? [
-      { title: 'id', value: chat.id.toString() },
-      { title: 'title', value: chat.title },
-      { title: 'type', value: chat.type },
-      { title: 'username', value: chat.username },
-      { title: 'photo_url', value: chat.photoUrl },
-    ]
-    : undefined;
+        { title: 'id', value: chat.id.toString() },
+        { title: 'title', value: chat.title },
+        { title: 'type', value: chat.type },
+        { title: 'username', value: chat.username },
+        { title: 'photo_url', value: chat.photoUrl },
+      ]
+    : undefined
 })
 
 function getUserRows(user: User): DisplayDataRow[] {
@@ -66,7 +75,7 @@ function getUserRows(user: User): DisplayDataRow[] {
     { title: 'language_code', value: user.languageCode },
     { title: 'allows_to_write_to_pm', value: user.allowsWriteToPm },
     { title: 'added_to_attachment_menu', value: user.addedToAttachmentMenu },
-  ];
+  ]
 }
 </script>
 
@@ -74,7 +83,9 @@ function getUserRows(user: User): DisplayDataRow[] {
   <UiPage title="Init Data">
     <template #disclaimer>
       This page displays application
-      <UiLink to="https://docs.telegram-mini-apps.com/platform/init-data">init data</UiLink>.
+      <UiLink to="https://docs.telegram-mini-apps.com/platform/init-data"
+        >init data</UiLink
+      >.
     </template>
     <i v-if="!initDataRows">Application was launched with missing init data</i>
     <template v-else>
@@ -105,7 +116,7 @@ function getUserRows(user: User): DisplayDataRow[] {
 </template>
 
 <style scoped>
-.init-data-page__section+.init-data-page__section {
+.init-data-page__section + .init-data-page__section {
   margin-top: 12px;
 }
 
