@@ -28,10 +28,11 @@ defineProps<{ size: 'lg' | 'sm' }>()
 
 .card--lg {
   padding-bottom: 16px;
-  background-size: 100%;
+  background-size: contain;
   background-image: url(/img/bg-tg-pattern.png);
   background-position: center;
   background-blend-mode: overlay;
+  background-repeat: no-repeat;
 }
 
 .head {
