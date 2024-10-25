@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@telegram-apps/sdk-vue':
-        specifier: ^1.0.1
-        version: 1.0.1(vue@3.5.12(typescript@5.6.3))
+        specifier: 1.0.0
+        version: 1.0.0(vue@3.5.12(typescript@5.6.3))
       eruda:
         specifier: ^3.4.0
         version: 3.4.0
@@ -376,8 +376,8 @@ packages:
   '@telegram-apps/navigation@1.0.4':
     resolution: {integrity: sha512-I+wwfhR7O29ofzJ+x4HzErDbvYGjXlJaeaTxwYLCvcS014pv4+5ijbfKSBAmNIxWZC+s97+WzTD86jeze79K3w==}
 
-  '@telegram-apps/sdk-vue@1.0.1':
-    resolution: {integrity: sha512-6G052bAcDUOffwyVmTuiwH9Yj1vBclcZEVzsqPllqdkFoMJXrMzvV/jb/m48aQxe1Gk0jOm8diHKGHZQqFJ6nA==}
+  '@telegram-apps/sdk-vue@1.0.0':
+    resolution: {integrity: sha512-K1y2wwQpn+rg5A8cNPY3g1ozkqzaviIFkcqaArs9nyvLFqE7AXjZfJmVISrA7LNxd6FgvEBgvIaOYFN2LOVXxQ==}
     peerDependencies:
       vue: ^3.0.0
 
@@ -1391,7 +1391,7 @@ snapshots:
       '@telegram-apps/signals': 1.0.1
       '@telegram-apps/toolkit': 1.0.0
 
-  '@telegram-apps/sdk-vue@1.0.1(vue@3.5.12(typescript@5.6.3))':
+  '@telegram-apps/sdk-vue@1.0.0(vue@3.5.12(typescript@5.6.3))':
     dependencies:
       '@telegram-apps/sdk': 2.5.2
       vue: 3.5.12(typescript@5.6.3)
