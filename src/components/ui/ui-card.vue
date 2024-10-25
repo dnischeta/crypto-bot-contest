@@ -28,7 +28,7 @@ defineProps<{ size: 'lg' | 'sm' }>()
 
 .card--lg {
   padding-bottom: 16px;
-  background-size: contain;
+  background-size: cover;
   background-image: url(/img/bg-tg-pattern.png);
   background-position: center;
   background-blend-mode: overlay;
