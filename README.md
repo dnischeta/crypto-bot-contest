@@ -4,7 +4,7 @@ Welcome to the **Crypto Bot Contest** project! This application allows users to 
 
 ## 🤖 Demo
 
-👉 **[Access the Telegram Bot]([https://t.me/your_crypto_bot](https://t.me/dim_contest_bot))**
+👉 **[Access the Telegram Bot]([https://t.me/your_crypto_bot](https://t.me/dim_contest_bot)**
 
 *Note: The demo application is configured to work with the Crypto Bot on the mainnet.*
 
