@@ -8,7 +8,7 @@ BOT_NAME="gifts-bot"
 
 # Connect and stop running apps
 ssh ${REMOTE_USER}@${REMOTE_HOST} << ENDSSH
-sudo pm2 stop ecosystem.config.js || true
+sudo pm2 stop app/ecosystem.config.cjs || true
 
 rm -rf ${REMOTE_DIR}*
 ENDSSH
