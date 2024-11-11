@@ -5,6 +5,7 @@ import UiRow from './ui/ui-row.vue'
 import UiAvatar from './ui/ui-avatar.vue'
 import UiIcon from './ui/ui-icon.vue'
 import { useAvatar } from '@/composables/use-avatar'
+import { useI18n } from 'vue-i18n'
 
 const props = defineProps<{ action: AppEventWithUserNames }>()
 
@@ -14,13 +15,14 @@ const sender = computed(() => ({
 }))
 
 const avatar = useAvatar(sender)
+const { t } = useI18n()
 
 const actionType = computed(() => {
   switch (props.action.type) {
     case 'gift-purchased':
-      return 'Buy gift'
+      return t('gift.buy-gift')
     case 'gift-send':
-      return 'Send gift'
+      return t('gift.send-gift')
     default:
       return ''
   }

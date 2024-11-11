@@ -70,7 +70,7 @@ const rows = computed(() => [
   </UiCard>
   <UiDrawer
     :visible="detailsVisible"
-    main-button-text="Close"
+    :main-button-text="$t('button.close')"
     @close="detailsVisible = false"
     @click:main-button="detailsVisible = false"
   >

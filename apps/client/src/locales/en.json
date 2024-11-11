@@ -26,6 +26,7 @@
   },
   "button": {
     "send": "Send",
+    "close": "Close",
     "open-store": "Open Store",
     "view": "View",
     "open-profile": "Open Profile",

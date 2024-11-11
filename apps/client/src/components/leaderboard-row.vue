@@ -46,7 +46,11 @@ const name = computed(() => {
     </div>
     <div class="gifts-qty">
       <UiIcon name="gift" size="sm" />
-      {{ $tc('leaderboard.gifts-qty', user.receivedGiftCount, { qty: user.receivedGiftCount }) }}
+      {{
+        $tc('leaderboard.gifts-qty', user.receivedGiftCount, {
+          qty: user.receivedGiftCount,
+        })
+      }}
     </div>
     <template #append
       ><span class="rank">#&nbsp;{{ row.position }}</span></template
