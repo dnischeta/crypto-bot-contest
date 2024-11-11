@@ -12,6 +12,8 @@ import { formatPrice } from '@/utils/price'
 import { formatQty } from '@/utils/qty'
 import { formatDateTime } from '@/utils/date'
 import { useI18n } from 'vue-i18n'
+import { useClipboard } from '@/composables/use-clipboard'
+import { usePopup } from '@/composables/use-popup'
 
 const props = defineProps<{
   gift: GiftMeta
@@ -21,6 +23,8 @@ const props = defineProps<{
 const detailsVisible = ref(false)
 
 const { t } = useI18n()
+const { writeText } = useClipboard()
+const { open } = usePopup()
 
 const rows = computed(() => [
   { title: t('gift.table.gift'), value: props.gift.name },
@@ -39,9 +43,13 @@ const rows = computed(() => [
   },
 ])
 
-function handleSendGift() {
-  // TODO
-  console.log('send gift')
+async function handleSendGift() {
+  await writeText(`${import.meta.env.VITE_BOT_NAME} ${props.purchasedGift._id}`)
+
+  open({
+    title: t('button.send-to-contact'),
+    message: t('gift.send-popup-message'),
+  })
 }
 </script>
 

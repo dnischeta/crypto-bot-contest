@@ -22,7 +22,8 @@
       "date": "Date",
       "price": "Price",
       "availability": "Availability"
-    }
+    },
+    "send-popup-message": "Go to the chat with a friend and paste copied command."
   },
   "button": {
     "send": "Send",

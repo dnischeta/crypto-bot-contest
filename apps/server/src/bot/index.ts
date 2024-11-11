@@ -50,6 +50,7 @@ export function initializeBot(fastify: FastifyInstance) {
             getGifts(fastify.mongo.db),
         ])
 
+        
         if (purchasedGifts.length === 0) {
             await ctx.answerInlineQuery([], { button: { text: 'You don\'t have any gifts yet.' } })
             return
@@ -59,8 +60,11 @@ export function initializeBot(fastify: FastifyInstance) {
             acc[gift.id] = gift
             return acc
         }, {})
-
-        const results = purchasedGifts.map((g) => InlineQueryResultBuilder
+        
+        const purchasedGift = purchasedGifts.find((g) => g._id === ctx.inlineQuery.query)
+        const filteredPurchasedGifts = purchasedGift ? [purchasedGift] : purchasedGifts
+        
+        const results = filteredPurchasedGifts.map((g) => InlineQueryResultBuilder
             .article(
                 g._id,
                 "Send Gift",
