@@ -1,12 +1,10 @@
 # Crypto Bot Contest
 
-Welcome to the **Crypto Bot Contest** project! This application allows users to buy and send digital gifts to their friends via Telegram. The project consists of a client-side application built with Vue.js and a server-side application built with Node.js and Fastify. Additionally, it integrates with the Crypto Pay API for handling payments.
+Welcome to the **Crypto Bot Contest** project! This application allows users to buy and send digital gifts to their friends via Telegram. The project consists of a client-side application built with Vue.js and a server-side application built with Node.js and Fastify. Additionally, it integrates with the [Crypto Pay API]([url](https://help.crypt.bot/crypto-pay-api) for handling payments.
 
 ## 🤖 Demo
 
-Experience the Crypto Bot in action! Interact with our Telegram bot to buy and send gifts.
-
-👉 **[Access the Telegram Bot](https://t.me/your_crypto_bot)**
+👉 **[Access the Telegram Bot]([https://t.me/your_crypto_bot](https://t.me/dim_contest_bot))**
 
 *Note: The demo application is configured to work with the Crypto Bot on the mainnet.*
 
