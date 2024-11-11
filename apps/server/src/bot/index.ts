@@ -60,8 +60,10 @@ export function initializeBot(fastify: FastifyInstance) {
             acc[gift.id] = gift
             return acc
         }, {})
-        
-        const purchasedGift = purchasedGifts.find((g) => g._id === ctx.inlineQuery.query)
+
+        const purchasedGift = purchasedGifts.find((g) => {
+            return g._id.toString() === ctx.inlineQuery.query
+        })
         const filteredPurchasedGifts = purchasedGift ? [purchasedGift] : purchasedGifts
         
         const results = filteredPurchasedGifts.map((g) => InlineQueryResultBuilder
