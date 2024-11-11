@@ -10,6 +10,7 @@ async function botInitializer(fastify: FastifyInstance) {
             sendReceivedGiftNotification: () => { },
             sendGiftDeliveredNotification: () => { },
             sendGiftPurchasedNotification: () => { },
+            getUserAvatarUrl: () => Promise.resolve(undefined),
         })
         return
     }

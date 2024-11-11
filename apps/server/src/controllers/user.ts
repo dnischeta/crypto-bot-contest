@@ -1,7 +1,7 @@
 import { validate, parse } from '@telegram-apps/init-data-node'
 import type { ApiGetUserRequest, ApiGetUserResponse, ApiLoginRequest, ApiLoginResponse, User } from '@crypto-bot-contest/types'
 import type { FastifyInstance } from 'fastify'
-import { createOrUpdateUser, getUser, getUserAvatarUrl } from '../db/user'
+import { createOrUpdateUser, getUser, getUserAvatarUrl, getUserWithPhotoUrl } from '../db/user'
 
 export function createUserController(fastify: FastifyInstance, IS_DEV: boolean) {
     fastify.post<{ Body: ApiLoginRequest, Reply: ApiLoginResponse }>('/login', async (request, reply) => {
@@ -17,13 +17,21 @@ export function createUserController(fastify: FastifyInstance, IS_DEV: boolean) 
 
             const { user } = initData
 
-            const userData: Omit<User, 'createdAt' | 'purchasedGifts' | 'receivedGiftCount'> = {
+            const userData: Omit<User, 'createdAt' | 'purchasedGifts' | 'receivedGiftCount'> & { photoUrl?: string } = {
                 telegramId: user.id,
                 firstName: user.firstName,
                 lastName: user.lastName,
                 username: user.username,
                 languageCode: user.languageCode,
                 isPremium: user.isPremium,
+            }
+
+            const existingUser = await getUserWithPhotoUrl(fastify.mongo.db, user.id)
+            if (!existingUser?.photoUrl) {
+                const photoUrl = await fastify.bot.getUserAvatarUrl(user.id)
+                if (photoUrl) {
+                    userData.photoUrl = photoUrl
+                }
             }
 
             const savedUser = await createOrUpdateUser(fastify.mongo.db, userData)

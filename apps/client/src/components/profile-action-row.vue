@@ -17,17 +17,6 @@ const { t } = useI18n()
 
 const giftMeta = computed(() => getGiftMetaById(props.action.giftId))
 
-const actionType = computed(() => {
-  switch (props.action.type) {
-    case 'gift-purchased':
-      return t('gift.buy-gift')
-    case 'gift-send':
-      return t('gift.send-gift')
-    default:
-      return ''
-  }
-})
-
 const isSender = computed(
   () =>
     props.action.type === 'gift-send' &&
@@ -38,6 +27,17 @@ const isReceiver = computed(
     props.action.type === 'gift-send' &&
     props.action.receiverId === props.currentUserId,
 )
+
+const actionType = computed(() => {
+  switch (props.action.type) {
+    case 'gift-purchased':
+      return t('history.buy')
+    case 'gift-send':
+      return isSender.value ? t('history.send') : t('history.receive')
+    default:
+      return ''
+  }
+})
 
 const iconName = computed<Icon>(() => {
   if (props.action.type === 'gift-purchased') {

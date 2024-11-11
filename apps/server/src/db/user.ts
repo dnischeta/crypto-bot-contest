@@ -21,6 +21,10 @@ export async function getUser(db: Db, telegramId: number): Promise<User | null> 
     return await db.collection<User>(USER_COLLECTION).findOne({ telegramId }, { projection: { photoUrl: 0 } })
 }
 
+export async function getUserWithPhotoUrl(db: Db, telegramId: number): Promise<User & { photoUrl: string } | null> {
+    return await db.collection<User & { photoUrl: string }>(USER_COLLECTION).findOne({ telegramId })
+}
+
 export async function getUserAvatarUrl(db: Db, telegramId: number): Promise<string | null> {
     const result = await db.collection<User & { photoUrl?: string }>(USER_COLLECTION).findOne({ telegramId })
 

@@ -47,7 +47,7 @@ async function handleSendGift() {
   await writeText(`${import.meta.env.VITE_BOT_NAME} ${props.purchasedGift._id}`)
 
   open({
-    title: t('button.send-to-contact'),
+    title: t('own-gifts.command-copied'),
     message: t('gift.send-popup-message'),
   })
 }

@@ -21,7 +21,7 @@ const gift = computed(() => {
   <div class="content">
     <div class="image">
       <UiLottie :name="gift!.img" />
-      <UiLottie class="effect" name="effect-gift-purchased" />
+      <UiLottie class="effect" name="effect-gift-purchased" :loop="false" />
     </div>
     <h1>{{ $t('gift.purchased') }}</h1>
     <h2>

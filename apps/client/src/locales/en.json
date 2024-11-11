@@ -37,11 +37,15 @@
     "title": "Recent Actions",
     "subtitle": "Here is your action history.",
     "empty": "History is Empty",
-    "empty-text": "Give and receive gifts so there's something here."
+    "empty-text": "Give and receive gifts so there's something here.",
+    "send": "Send",
+    "buy": "Buy",
+    "receive": "Receive"
   },
   "own-gifts": {
     "title": "Send Gifts in Telegram",
-    "subtitle": "Send gifts to users that can be stored in their app profile."
+    "subtitle": "Send gifts to users that can be stored in their app profile.",
+    "command-copied": "Command copied"
   },
   "profile": {
     "gift-received-qty": "No gifts received | One gift received | {qty} gifts received",

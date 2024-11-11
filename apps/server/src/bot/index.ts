@@ -4,30 +4,11 @@ import { FastifyInstance } from 'fastify'
 import { getUserPurchasedGifts, sendGift } from "../db/gift";
 import { getGifts } from "../db/gift-meta";
 import type { GiftMeta } from "@crypto-bot-contest/types";
-import { createOrUpdateUser } from "../db/user";
 
 export function initializeBot(fastify: FastifyInstance) {
     const bot = new Bot(process.env.BOT_TOKEN)
 
     bot.command('start', async (ctx) => {
-        const photos = await ctx.getUserProfilePhotos({ limit: 1 })
-        let photoUrl: string | undefined
-
-        if (photos.total_count > 0) {
-            const photo = photos.photos[0][0]
-            const file = await ctx.api.getFile(photo.file_id)
-            photoUrl = `https://api.telegram.org/file/bot${process.env.BOT_TOKEN}/${file.file_path}`
-        }
-
-        await createOrUpdateUser(fastify.mongo.db, {
-            telegramId: ctx.from!.id,
-            firstName: ctx.from!.first_name,
-            lastName: ctx.from!.last_name,
-            username: ctx.from!.username,
-            languageCode: ctx.from!.language_code,
-            photoUrl
-        })
-
         return ctx.replyWithPhoto(
             new InputFile(path.resolve(import.meta.dirname, 'assets/img.png')),
             {
@@ -137,7 +118,26 @@ export function initializeBot(fastify: FastifyInstance) {
         )
     }
 
+    async function getUserAvatarUrl(telegramId: number): Promise<string | undefined> {
+        const photos = await bot.api.getUserProfilePhotos(telegramId, { limit: 1 })
+        
+        if (photos.total_count === 0) {
+          return undefined
+        }
+      
+        const photo = photos.photos[0][0]
+        const file = await bot.api.getFile(photo.file_id)
+        return `https://api.telegram.org/file/bot${process.env.BOT_TOKEN}/${file.file_path}`
+    }
+
     bot.start()
 
-    return { sendReceivedGiftNotification, sendGiftDeliveredNotification, sendGiftPurchasedNotification }
+    return {
+        sendReceivedGiftNotification,
+        sendGiftDeliveredNotification,
+        sendGiftPurchasedNotification,
+        getUserAvatarUrl,
+    }
 }
+
+
