@@ -10,6 +10,7 @@ export const ICONS = [
   'plane',
   'receive',
   'store',
+  'close',
 ] as const
 
 export type Icon = (typeof ICONS)[number]

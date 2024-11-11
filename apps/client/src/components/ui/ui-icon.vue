@@ -43,6 +43,9 @@ const icons: Record<Icon, { '1x': string; '2x'?: string }> = {
   store: {
     '1x': assetUrl('/img/icon-store.svg'),
   },
+  close: {
+    '1x': assetUrl('/img/icon-close.svg'),
+  },
 }
 
 const colors: Partial<Record<Icon, string>> = {
