@@ -82,7 +82,7 @@ const gift = computed(() => getGiftMetaById(giftId.value)!)
   align-items: center;
   flex-wrap: nowrap;
   gap: 8px;
-  font-weight: 510;
+  font-weight: var(--font-weight-semibold);
 }
 
 .gap {
@@ -93,6 +93,6 @@ const gift = computed(() => getGiftMetaById(giftId.value)!)
 .recent-actions-head {
   padding: 24px 16px 12px;
   text-transform: uppercase;
-  font-size: 13px;
+  font-size: var(--font-size-md);
 }
 </style>

@@ -99,16 +99,16 @@ const iconName = computed<Icon>(() => {
 }
 
 .action-type {
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 16px;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-sm);
   color: var(--color-label-secondary);
 }
 
 .action-gift-name {
-  font-size: 17px;
-  font-weight: 510;
-  line-height: 22px;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-lg);
 }
 
 .accent {

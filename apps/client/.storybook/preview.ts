@@ -1,4 +1,5 @@
-import '../src/theme.css'
+import '../src/styles/theme.css'
+import '../src/styles/typography.css'
 import '../src/index.css'
 import type { Preview } from '@storybook/vue3'
 import { setup } from '@storybook/vue3'

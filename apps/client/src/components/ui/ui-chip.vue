@@ -19,16 +19,16 @@ defineProps<{
   border-radius: 50px;
   color: var(--color-primary);
   overflow: hidden;
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: 500;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-lg);
+  font-weight: var(--font-weight-medium);
 }
 
 .chip--sm {
   padding: 0px 6px;
-  font-size: 11px;
-  line-height: 14px;
-  font-weight: 500;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-xs);
+  font-weight: var(--font-weight-medium);
   border-radius: 6px;
 }
 

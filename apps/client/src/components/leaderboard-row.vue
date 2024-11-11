@@ -74,10 +74,10 @@ const name = computed(() => {
   align-items: center;
   color: var(--color-accent-blue);
   gap: 6px;
-  font-size: 13px;
-  line-height: 16px;
-  font-weight: 400;
-  letter-spacing: 0;
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-sm);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--letter-spacing-normal);
 }
 
 .rank {

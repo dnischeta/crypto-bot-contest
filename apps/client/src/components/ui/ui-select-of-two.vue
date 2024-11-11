@@ -62,9 +62,9 @@ function toggle() {
   display: inline-flex;
   align-items: center;
   padding: 3px 10px;
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: 590;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-lg);
+  font-weight: var(--font-weight-bold);
   color: var(--color-label-secondary);
   border-radius: 100px;
 }

@@ -63,10 +63,10 @@ defineEmits<{
   border: none;
   cursor: pointer;
   color: var(--color-accent-cyan);
-  font-size: 17px;
-  line-height: 22px;
-  letter-spacing: 0;
-  font-weight: 400;
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-lg);
+  letter-spacing: var(--letter-spacing-normal);
+  font-weight: var(--font-weight-regular);
   margin-left: auto;
 }
 </style>

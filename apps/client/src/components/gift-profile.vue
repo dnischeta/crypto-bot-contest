@@ -91,9 +91,9 @@ const rows = computed(() => [
 }
 
 .gift-name {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 18px;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-md);
 }
 
 .gift-img {

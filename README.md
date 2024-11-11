@@ -228,6 +228,9 @@ This script installs necessary packages, sets up Node.js, installs PM2, and obta
 
 ## 📝 TODOs
 
+- [ ] **Clean up styles**:
+  - during development lots of style declarations for offsets were added to the project need to clean them up
+
 - [ ] **Enhance UX Animations**:
   - Add smooth animations for gift purchases
   - Implement animated page transitions

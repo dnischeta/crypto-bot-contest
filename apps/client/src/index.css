@@ -12,22 +12,11 @@ body {
 
 body {
   margin: 0;
-  font-family:
-    'SF Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
+  font-family: var(--font-family-base);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
-  letter-spacing: -0.43px;
+  letter-spacing: var(--letter-spacing-tight);
   background: var(--color-bg, white);
   color: var(--color-text, black);
 }

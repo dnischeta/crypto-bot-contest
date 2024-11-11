@@ -79,9 +79,9 @@ const iconName = computed(() => {
 }
 
 .action-type {
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 16px;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-sm);
   color: var(--color-label-secondary);
 }
 

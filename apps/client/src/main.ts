@@ -1,4 +1,5 @@
-import './theme.css'
+import './styles/theme.css'
+import './styles/typography.css'
 import './index.css'
 
 import { createReatomVue } from '@reatom/npm-vue'

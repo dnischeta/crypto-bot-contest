@@ -150,7 +150,7 @@ const isOwnProfile = computed(
 }
 
 .name {
-  line-height: 32px;
+  line-height: var(--line-height-xl);
   margin: 20px 0 4px;
 }
 
@@ -159,10 +159,10 @@ const isOwnProfile = computed(
 }
 
 .recent-actions {
-  font-size: 17px;
-  line-height: 22px;
-  height: 22px;
-  font-weight: 510;
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-lg);
+  height: var(--line-height-lg);
+  font-weight: var(--font-weight-semibold);
 }
 
 .spinner {

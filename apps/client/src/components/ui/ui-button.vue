@@ -39,10 +39,10 @@ defineProps<{
   height: 30px;
   background-color: var(--color-accent-blue);
   color: var(--color-white);
-  font-weight: 600;
-  letter-spacing: 0;
-  font-size: 13px;
-  line-height: 18px;
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: var(--letter-spacing-normal);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-md);
   border: none;
   border-radius: 15px;
   padding: 0 25px;
@@ -54,8 +54,8 @@ defineProps<{
   width: 100%;
   height: 50px;
   border-radius: 12px;
-  font-size: 17px;
-  line-height: 22px;
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-lg);
   justify-content: center;
 }
 
