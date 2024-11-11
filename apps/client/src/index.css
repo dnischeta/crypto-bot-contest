@@ -1,0 +1,99 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font-family:
+    'SF Pro',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  letter-spacing: -0.43px;
+  background: var(--color-bg, white);
+  color: var(--color-text, black);
+}
+
+#app {
+  height: 100%;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: normal;
+}
+
+h2 {
+  font-size: 16px; /* 17px in figma */
+  line-height: 22px;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: normal;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 16px; /* 17px in figma */
+  line-height: 22px;
+}
+
+.text--bold {
+  font-weight: 510;
+}
+
+.caption {
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: 0;
+  color: var(--color-label-secondary);
+}
+
+.caption--sm {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+blockquote {
+  margin: 0;
+}
+
+blockquote p {
+  padding: 15px;
+  background: #eee;
+  border-radius: 5px;
+}
+
+pre {
+  overflow: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

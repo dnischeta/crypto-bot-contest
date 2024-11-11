@@ -1,0 +1,44 @@
+<template>
+  <button class="close-button">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        x="16.9497"
+        y="5.63623"
+        width="2"
+        height="16"
+        rx="1"
+        transform="rotate(45 16.9497 5.63623)"
+        fill="#9E9EA1"
+      />
+      <rect
+        x="18.364"
+        y="16.9502"
+        width="2"
+        height="16"
+        rx="1"
+        transform="rotate(135 18.364 16.9502)"
+        fill="#9E9EA1"
+      />
+    </svg>
+  </button>
+</template>
+
+<style scoped>
+.close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #e3e3e8;
+}
+</style>

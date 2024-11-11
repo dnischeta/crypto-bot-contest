@@ -1,0 +1,64 @@
+{
+  "navigation": {
+    "store": "Store",
+    "own-gifts": "Gifts",
+    "leaderboard": "Leaderboard",
+    "profile": "Profile"
+  },
+  "gift": {
+    "purchased": "Gift Purchased",
+    "purchased-message": "The {name} gift was purchased for {price}",
+    "purchased-notification-title": "You bought a Gift",
+    "purchased-notification-text": "Now send it to your friend.",
+    "received": "Gift Received",
+    "received-message": "You have received the gift of {name}.",
+    "received-notification-text": "{name} from your friend.",
+    "no-gifts": "You don't have any gifts yet.",
+    "buy-gift": "Buy gift",
+    "send-gift": "Send gift",
+    "table": {
+      "from": "From",
+      "gift": "Gift",
+      "date": "Date",
+      "price": "Price",
+      "availability": "Availability"
+    }
+  },
+  "button": {
+    "send": "Send",
+    "open-store": "Open Store",
+    "view": "View",
+    "open-profile": "Open Profile",
+    "send-to-contact": "Send to Contact"
+  },
+  "history": {
+    "title": "Recent Actions",
+    "subtitle": "Here is your action history.",
+    "empty": "History is Empty",
+    "empty-text": "Give and receive gifts so there's something here."
+  },
+  "own-gifts": {
+    "title": "Send Gifts in Telegram",
+    "subtitle": "Send gifts to users that can be stored in their app profile."
+  },
+  "profile": {
+    "gift-received-qty": "No gifts received | One gift received | {qty} gifts received",
+    "no-gifts-message-own": "You can buy a gift to receive a gift in return.",
+    "no-gifts-message": "You can buy a gift and send it to {name}."
+  },
+  "store": {
+    "title": "Buy and Send Gifts",
+    "subtitle": "Unique gifts for everyone by Crypto Pay.",
+    "qty": "{soldQty} of {totalQty}",
+    "gift-caption": "Purchase this gift for the opportunity to give it to another user.",
+    "sold-out": "Sold Out"
+  },
+  "general": {
+    "from": "from",
+    "to": "to",
+    "you": "You"
+  },
+  "leaderboard": {
+    "gifts-qty": "1 gift | {qty} gifts"
+  }
+}

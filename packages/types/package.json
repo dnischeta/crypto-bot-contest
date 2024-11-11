@@ -1,0 +1,18 @@
+{
+  "name": "@crypto-bot-contest/types",
+  "version": "0.0.0",
+  "private": true,
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "rm -rf ./dist && tsc --build"
+  },
+  "dependencies": {
+    "typescript": "~5.6.0"
+  }
+}

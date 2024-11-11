@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Delicious Cake",
+    "totalQty": 10000,
+    "leftQty": 10000,
+    "image": "gift-delicious-cake",
+    "price": {
+      "amount": 10,
+      "currency": "usdt"
+    },
+    "accentColor": "#FE9F41"
+  },
+  {
+    "id": 2,
+    "name": "Green star",
+    "totalQty": 3000,
+    "leftQty": 802,
+    "image": "gift-green-star",
+    "price": {
+      "amount": 5,
+      "currency": "ton"
+    },
+    "accentColor": "#46D100"
+  },
+  {
+    "id": 3,
+    "name": "Red star",
+    "totalQty": 10000,
+    "leftQty": 32,
+    "image": "gift-red-star",
+    "price": {
+      "amount": 5,
+      "currency": "ton"
+    },
+    "accentColor": "#FF4747"
+  },
+  {
+    "id": 4,
+    "name": "Blue star",
+    "totalQty": 10000,
+    "leftQty": 320,
+    "image": "gift-blue-star",
+    "price": {
+      "amount": 5,
+      "currency": "ton"
+    },
+    "accentColor": "#007Aff"
+  }
+]

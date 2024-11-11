@@ -1,0 +1,54 @@
+{
+  "navigation": {
+    "store": "Магазин",
+    "own-gifts": "Подарки",
+    "leaderboard": "Рейтинг",
+    "profile": "Профиль"
+  },
+  "gift": {
+    "purchased": "Подарок куплен",
+    "purchased-message": "Подарок {name} куплен за {price}",
+    "purchased-notification-title": "Вы купили подарок",
+    "purchased-notification-text": "Теперь отправьте его другу.",
+    "received": "Подарок получен",
+    "received-message": "Вы получили подарок {name}.",
+    "received-notification-text": "{name} от вашего друга.",
+    "no-gifts": "У вас еще нет подарков.",
+    "buy-gift": "Купить",
+    "send-gift": "Отправить",
+    "table": {
+      "from": "От",
+      "gift": "Подарок",
+      "date": "Дата",
+      "price": "Цена",
+      "availability": "Номер"
+    }
+  },
+  "button": {
+    "send": "Другу",
+    "open-store": "Открыть магазин",
+    "view": "Посмотреть",
+    "open-profile": "Открыть профиль"
+  },
+  "history": {
+    "title": "Недавние действия",
+    "subtitle": "Ваша история действий",
+    "empty": "История пуста",
+    "empty-text": "Дарите и получайте подарки, чтобы здесь что-то появилось"
+  },
+  "own-gifts": {
+    "title": "Отправляйте подарки в Telegram",
+    "subtitle": "Отправляйте подарки пользователям, которые будут храниться в их профиле"
+  },
+  "profile": {
+    "gift-received-qty": "Нет подарков | Один подарок получен | {qty} подарков получено",
+    "no-gifts-message-own": "Вы можете купить подарок, чтобы получить подарок в ответ.",
+    "no-gifts-message": "Вы можете купить подарок и отправить его {name}."
+  },
+  "store": {
+    "title": "Покупайте и отправляйте подарки",
+    "subtitle": "Уникальные подарки для всех от Crypto Pay",
+    "qty": "{soldQty} из {totalQty}",
+    "gift-caption": "Купите этот подарок, подарить его другу."
+  }
+}
