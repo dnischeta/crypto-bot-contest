@@ -71,13 +71,11 @@ const launchParams = retrieveLaunchParams()
 
 const { isMobile } = usePlatform()
 
-Promise.all([
-  fetchGiftsBound(),
-  loginBound(launchParams.initDataRaw),
-  processStartParam(),
-]).then(() => {
-  ready.value = true
-})
+loginBound(launchParams.initDataRaw)
+  .then(() => Promise.all([fetchGiftsBound(), processStartParam()]))
+  .then(() => {
+    ready.value = true
+  })
 </script>
 
 <template>
